@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Travel  </title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+      body {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Navigation */
+      .header {
+            background-color: #4472C4;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1700px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;  /* <-- push all content to the right */
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            transform: translateY(-2px);
+        }
+
+        /* Page Content */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: white;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            max-width: 50%;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #555;
+        }
+
+        .full-image {
+            width: 100%;
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            margin: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .full-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                max-width: 100%;
+            }
+
+            .content {
+                padding: 2rem 1rem;
+            }
+
+            .full-image {
+                height: 50vh;
+            }
+        }
+
+        /* Page-specific hero backgrounds */
+        .page1 .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Finnish_Independence_Day_2015%2C_Senate_Square_Helsinki_01.JPG');
+        }
+
+        .page2 .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://live.staticflickr.com/222/458891119_e366af377b_b.jpg');
+        }
+
+        .page3 .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://live.staticflickr.com/65535/32838427317_507093999b_b.jpg');
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" data-page="page1">Finnish History</a>
+                <a href="#" class="nav-link" data-page="page2">Places To Eat</a>
+                <a href="#" class="nav-link" data-page="page3">May Day Festivities</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Page 1: Finnish History -->
+    <div class="page page1 active" id="page1">
+        <div class="hero">
+            <h1>Finnish History</h1>
+        </div>
+        <div class="content">
+            <p>As soon as you step onto Finnish land, you’re walking across a place with a history dating back over 11,000 years. It was first founded around 9000 BC, after the Ice Age retreated, only to leave a vast landscape of dense forests and clear lakes. But if you still want the cold, consider travelling to the northern part of Finland. Travel to Lapland to see winter wonders like the icy shimmer of the northern lights. There are lots of new experiences to try, like soaking in a traditional sauna after a day of cross-country skiing and riding the sleigh. Maybe even pay a visit to Santa’s village and melt in the warm embrace of Father Christmas.</p>
+
+            <div class="full-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Multiple_rays_of_northern_lights_above_Vuopajanniemi%2C_Inari%2C_Lapland%2C_Finland%2C_2018_March.jpg');"></div>
+
+            <p>Many different Stone, Bronze, and Iron Age cultures came over time, one after the other. From the late 13th century, Finland was under the rule of Sweden’s mighty empire, but in 1809 it was captured by Russia. In 1917, it declared independence.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/1020/4611310279_8a249fc378_b.jpg');"></div>
+
+            <p>The 20th century was not an easy task for this country. During World War II, Finland fought the Soviet Union and Nazi Germany, due to this, they lost some territory, but managed to keep their status as an independent country. Over the next 100 years after gaining independence, Finland evolved from relying on farming to establishing a strong economy and achieving a high GDP.</p>
+
+            <div class="full-image" style="background-image: url('https://cdn2.picryl.com/photo/1919/12/31/finnish-volunteers-in-narva-1919-bdfd04-1024.jpg');"></div>
+
+            <p>Don’t worry about currency exchange when travelling from Europe because shortly after it joined the European Union in 1995, it adopted the euro as its currency in 1999. Finland’s resilience shows not just in history, but also in its modern choices. Apart from economic alliances, Finland is also part of a strong military coalition. In response to Russia’s 2022 invasion of Ukraine, Finland joined NATO in April 2023. Now, Finland is a very sustainable country, using green energy and public transport, ideal for travellers without vehicles. Beyond its political evolution, Finland offers visitors many other intriguing aspects. In case you’re planning on staying there a long time, it is a must to know that Finland has strong education and population well-being.</p>
+
+            <div class="full-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d4/City_of_Helsinki.jpg');"></div>
+
+        </div>
+    </div>
+
+    <!-- Page 2: Places To Eat -->
+    <div class="page page2" id="page2">
+        <div class="hero">
+            <h1>Places To Eat</h1>
+        </div>
+        <div class="content">
+            <p>After a long day of walking around and exploring Helsinki, one might develop quite an appetite. Helsinki is a large city with many cool places to visit, but after all that wandering, it’s nice to take a break in a nice cafe and reward yourself with a sweet treat or maybe even sit down at a restaurant and have a delicious meal.</p>
+
+            <div class="full-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cf/Interior_of_restaurant_Faro_in_Ruoholahti%2C_Helsinki.jpg');"></div>
+
+            <p>Although Finnish cuisine is quite unique and may be unappealing to those who aren’t used to it, there are some notable food places to visit. By far, the most iconic place there is the Fazer Cafe in Helsinki, located on Kluuvikatu 3. Fazer is one of the largest corporations in the Finnish food industry, and their products can be found throughout all of Europe. It was founded as early as 1891 by Karl O. Fazer, a man who studied baking all across the continent. Studying in Berlin, Paris, and even Saint Petersburg, only to return to Finland at the end of the 19th century and open the cafe that still exists today.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/3132/2779420034_b51209a3cf_b.jpg');"></div>
+
+            <p>This cafe not only serves great food, but also has a beautiful interior and a very interesting history. Combined with great reviews, it has budget-friendly food options, including both desserts and balanced lunches. Upon entry, you will be greeted with the sweet smell of freshly baked pastries and a chocolaty aroma from their candy selection. They often have iconic seasonal specials. I went there at the end of April to find lots of May Day-themed foods, like doughnuts. Absolutely, a place to try.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/3244/2779425522_b49393d909_b.jpg');"></div>
+
+            <p>If you don’t like Finnish food, however, a delicious and quick lunch can be found at the food court in Kamppi Center. It offers a broad variety of international cuisines, including Chinese, Vietnamese, Korean, Japanese, Italian, and more.</p>
+
+            <div class="full-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Interior_on_the_first_floor_of_the_shopping_centre_of_Kamppi_Center_in_Kamppi%2C_Helsinki%2C_Finland%2C_2022_August.jpg');"></div>
+
+            <p>Another place I tried during my time in Finland was Oppa Korean Barbeque. Although this isn’t exactly Finnish food, it was an amazing experience. This is another great option for those who are looking for something other than Finnish cuisine.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/1251/572648426_c6b5cd57e3_b.jpg');"></div>
+
+            <p>*images may not be completely accurate or up to date</p>
+        </div>
+    </div>
+
+    <!-- Page 3: May Day Festivities -->
+    <div class="page page3" id="page3">
+        <div class="hero">
+            <h1>May Day Festivities</h1>
+        </div>
+        <div class="content">
+            <p>Be aware when travelling to Finland in May, every country has its holidays and traditions, especially Finland. May Day is a big celebration in Finnish culture. While May 1 is known in many countries as International Workers’ Day, in Finland, it’s so much more.</p>
+
+            <div class="full-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/01/Mayday_eve_in_Turku_2013.jpg');"></div>
+
+            <p>In the days before May 1st, the streets fill up with colorful balloons, doughnuts, picnics, and loud music. The city begins to come alive when the streets and squares flood with university students wearing white student caps and silly overalls covered in patches. Each costume represents a different university.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/65535/40815762503_66996c841c_b.jpg');"></div>
+
+            <p>The evening before May first, the celebration really kicks in, crowds gather for outdoor concerts and parades, loud music and cheerful singing are heard everywhere. But be careful, restaurants and hotels are very overbooked, so it can be exceptionally hard to sit down with your favourite meal. However, this is not a problem. Even if you didn’t get a seat at your restaurant of choice, you can still get full on munkki, Finnish doughnuts, and plenty of other delicious May Day snacks. Additionally, feel free to sit down at a park for a picnic, just like the locals.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/5262/5627899085_131ff7ef81_b.jpg');"></div>
+
+            <p>Finnish people, just like Estonians, famously avoid social interactions as much as possible, saying very few words. But on the first of May, everyone is loud, happy, and smiling. <i>(Still, don’t expect to be starting conversations with strangers.)</i></p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/65535/46865576805_da3c98b4ab_b.jpg');"></div>
+
+            <p>This day is a special opportunity for foreigners to see happy faces on the streets of Finland. The whole country seems to breathe a sigh of relief as the snow melts, the flowers bloom, and the days grow longer. Whether you’re watching students parade through the streets, eating your first May Day doughnut, or setting up a picnic, you’ll be able to experience Finland’s joy, humor, and strong sense of tradition. If you love big celebrations, visit Finland and participate in or observe the festivities taking place.</p>
+
+            <div class="full-image" style="background-image: url('https://live.staticflickr.com/65535/46865535995_4569c79e1c_b.jpg');"></div>
+        </div>
+    </div>
+
+    <script>
+        // Page Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Remove active class from all links and pages
+                navLinks.forEach(l => l.classList.remove('active'));
+                pages.forEach(p => p.classList.remove('active'));
+
+                // Add active class to clicked link
+                link.classList.add('active');
+
+                // Show corresponding page
+                const targetPage = link.getAttribute('data-page');
+                document.getElementById(targetPage).classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('.full-image').forEach(image => {
+            image.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+
+            image.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
